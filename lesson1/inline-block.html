@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inline与Inline-block的区别</title>
+    <style>
+        .demo-container {
+            margin: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        .inline-element {
+            background-color: #ffcdd2;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        .inline-block-element {
+            display: inline-block;
+            background-color: #c8e6c9;
+            margin: 10px;
+            padding: 10px;
+            width: 200px;
+            height: 100px;
+        }
+
+        .block-element {
+            background-color: #bbdefb;
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Inline与Inline-block的区别</h1>
+
+    <div class="demo-container">
+        <h2>1. Inline元素特点：</h2>
+        <p>- 不会独占一行</p>
+        <p>- 不能设置宽高</p>
+        <p>- 只能设置左右margin和padding</p>
+        <div>
+            <span class="inline-element">这是第一个inline元素</span>
+            <span class="inline-element">这是第二个inline元素</span>
+        </div>
+    </div>
+
+    <div class="demo-container">
+        <h2>2. Inline-block元素特点：</h2>
+        <p>- 不会独占一行</p>
+        <p>- 可以设置宽高</p>
+        <p>- 可以设置所有方向的margin和padding</p>
+        <div>
+            <div class="inline-block-element">这是第一个inline-block元素</div>
+            <div class="inline-block-element">这是第二个inline-block元素</div>
+        </div>
+    </div>
+
+    <div class="demo-container">
+        <h2>3. Block元素特点（作为对比）：</h2>
+        <p>- 独占一行</p>
+        <p>- 可以设置宽高</p>
+        <p>- 可以设置所有方向的margin和padding</p>
+        <div>
+            <div class="block-element">这是第一个block元素</div>
+            <div class="block-element">这是第二个block元素</div>
+        </div>
+    </div>
+</body>
+</html>

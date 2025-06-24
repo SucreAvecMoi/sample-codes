@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox Layout Examples</title>
+    <style>
+      h2 {
+        text-align: center;
+      }
+      /* 容器样式 */
+      .container {
+        display: flex;
+        background-color: #f0f0f0;
+        margin-bottom: 10px;
+        padding: 10px;
+      }
+
+      /* 子项样式 */
+      .item {
+        padding: 10px;
+        margin: 5px;
+        background-color: #4caf50;
+        color: white;
+        border-radius: 5px;
+        flex: 1; /* 默认平分空间 */
+      }
+
+      .item-fixed-width {
+        width: 100px;
+        padding: 10px;
+        margin: 5px;
+        background-color: #4caf50;
+        color: white;
+        border-radius: 5px;
+      }
+
+      .item-fixed-width-500 {
+        width: 500px;
+        padding: 10px;
+        margin: 5px;
+        background-color: #4caf50;
+        color: white;
+        border-radius: 5px;
+      }
+
+      /* 容器垂直排列 */
+      .vertical-container {
+        flex-direction: column;
+      }
+
+      /* 容器水平居中 */
+      .center-container {
+        align-items: center;
+      }
+
+      /* 容器两端对齐 */
+      .justify-container {
+        justify-content: space-between;
+      }
+
+      .j-c-flex-start {
+        justify-content: flex-start;
+      }
+
+      .j-c-flex-end {
+        justify-content: flex-end;
+      }
+
+      .j-c-center {
+        justify-content: center;
+      }
+
+      .j-c-space-around {
+        justify-content: space-around;
+      }
+      .j-c-space-between {
+        justify-content: space-between;
+      }
+
+      /* 容器基线对齐 */
+      .baseline-container {
+        align-items: baseline;
+      }
+
+      /* 容器内容环绕 */
+      .wrap-container {
+        flex-wrap: wrap;
+      }
+
+      /* 容器内容逆序排列 */
+      .reverse-container {
+        flex-wrap: wrap-reverse;
+      }
+
+      /* 子项不随容器伸缩 */
+      .no-grow {
+        flex-grow: 0;
+      }
+
+      /* 子项占据双倍空间 */
+      .double-flex {
+        flex: 2;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Flexbox Layout Examples</h1>
+    <h2>flex-direction</h2>
+    <!-- 基本的行排列 -->
+    <div>默认排列（水平）</div>
+    <div class="container">
+      <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+    </div>
+
+    <!-- 垂直排列 -->
+    <div>垂直方向排列</div>
+    <div class="container vertical-container">
+      <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+    </div>
+    <!-- 内容逆序排列 -->
+    <div>水平逆序</div>
+    <div
+      class="container reverse-container"
+      style="flex-direction: row-reverse"
+    >
+      <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+    </div>
+    <div>垂直逆序</div>
+    <div
+      class="container reverse-container"
+      style="flex-direction: column-reverse"
+    >
+      <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+    </div>
+
+    <h2>flex-wrap</h2>
+    <!-- 水平居中 -->
+    <div class="container center-container">
+      <div class="item-fixed-width">Item 1</div>
+      <div class="item-fixed-width">Item 2</div>
+    </div>
+
+    <div>wrap换行</div>
+    <div class="container center-container" style="flex-wrap: wrap">
+      <div class="item-fixed-width-500">Item 1</div>
+      <div class="item-fixed-width-500">Item 2</div>
+      <div class="item-fixed-width-500">Item 3</div>
+      <div class="item-fixed-width-500">Item 4</div>
+      <div class="item-fixed-width-500">Item 5</div>
+      <div class="item-fixed-width-500">Item 6</div>
+    </div>
+
+    <div>no-wrap不换行</div>
+    <div class="container center-container" style="flex-wrap: no-wrap">
+      <div class="item-fixed-width-500">Item 1</div>
+      <div class="item-fixed-width-500">Item 2</div>
+      <div class="item-fixed-width-500">Item 3</div>
+      <div class="item-fixed-width-500">Item 4</div>
+      <div class="item-fixed-width-500">Item 5</div>
+      <div class="item-fixed-width-500">Item 6</div>
+    </div>
+
+    <h2>justify-content</h2>
+
+    <!-- flex-start -->
+    <div>flex-start</div>
+    <div class="container j-c-flex-start">
+      <div class="item-fixed-width">Item 1</div>
+      <div class="item-fixed-width">Item 2</div>
+    </div>
+    <!-- flex-end -->
+    <div>flex-end</div>
+    <div class="container j-c-flex-end">
+      <div class="item-fixed-width">Item 1</div>
+      <div class="item-fixed-width">Item 2</div>
+    </div>
+    <!-- 居中 -->
+    <div>center</div>
+    <div class="container j-c-center">
+      <div class="item-fixed-width">Item 1</div>
+      <div class="item-fixed-width">Item 2</div>
+    </div>
+    <!-- 环绕平分 -->
+    <div class="container j-c-space-around">
+      <div class="item-fixed-width">Item 1</div>
+      <div class="item-fixed-width">Item 2</div>
+    </div>
+    <!-- 两端对齐 -->
+    <div class="container j-c-space-between">
+      <div class="item-fixed-width">Item 1</div>
+      <div class="item-fixed-width">Item 2</div>
+    </div>
+
+    <h2>align-items</h2>
+    <!-- 基线对齐 -->
+    <div class="container baseline-container">
+      <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+    </div>
+
+    <!-- 内容环绕 -->
+    <div class="container wrap-container">
+      <div class="item-fixed-width">Item 1</div>
+      <div class="item-fixed-width">Item 2</div>
+      <div class="item-fixed-width">Item 3</div>
+      <div class="item-fixed-width">Item 4</div>
+      <div class="item-fixed-width">Item 5</div>
+    </div>
+
+    <!-- 子项不随容器伸缩 -->
+    <div class="container">
+      <div class="item no-grow">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+    </div>
+
+    <!-- 子项占据双倍空间 -->
+    <div class="container">
+      <div class="item">Item 1</div>
+      <div class="item double-flex">Item 2</div>
+      <div class="item">Item 3</div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; width: 100%; height: 100vh;">
+      <div id="header" style="height: 60px; width:100%; background-color: red;">
+
+      </div>
+      <div style="flex:1; width: 100%; background-color: yellow;display: flex;flex-direction: row;">
+        <div id="left" style="width: 100px;color:gray"></div>
+        <div id="main" style="flex:1; background-color: aquamarine;"></div>
+        <div id="right"style="width: 100px;color:gray"></div>
+      </div>
+      <div id="footer" style="height: 60px; width:100%;background-color: red;"></div>
+    </div>
+  </body>
+</html>

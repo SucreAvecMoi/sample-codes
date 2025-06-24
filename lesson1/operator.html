@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript运算符和常用函数</title>
+    <style>
+        .container {
+            margin: 20px;
+            padding: 15px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 15px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .example {
+            background-color: #f8f9fa;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>JavaScript运算符和常用函数</h1>
+
+        <h2>1. 数字运算</h2>
+        <h3>基础运算符</h3>
+        <table>
+            <tr>
+                <th>运算符</th>
+                <th>描述</th>
+                <th>示例</th>
+            </tr>
+            <tr>
+                <td>+</td>
+                <td>加法</td>
+                <td>5 + 3 // 8</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>减法</td>
+                <td>5 - 3 // 2</td>
+            </tr>
+            <tr>
+                <td>*</td>
+                <td>乘法</td>
+                <td>5 * 3 // 15</td>
+            </tr>
+            <tr>
+                <td>/</td>
+                <td>除法</td>
+                <td>15 / 3 // 5</td>
+            </tr>
+            <tr>
+                <td>%</td>
+                <td>取余</td>
+                <td>5 % 2 // 1</td>
+            </tr>
+            <tr>
+                <td>**</td>
+                <td>幂运算</td>
+                <td>2 ** 3 // 8</td>
+            </tr>
+        </table>
+
+        <h3>Math对象常用方法</h3>
+        <table>
+            <tr>
+                <th>方法</th>
+                <th>描述</th>
+                <th>示例</th>
+            </tr>
+            <tr>
+                <td>Math.abs()</td>
+                <td>绝对值</td>
+                <td>Math.abs(-5) // 5</td>
+            </tr>
+            <tr>
+                <td>Math.round()</td>
+                <td>四舍五入</td>
+                <td>Math.round(4.6) // 5</td>
+            </tr>
+            <tr>
+                <td>Math.floor()</td>
+                <td>向下取整</td>
+                <td>Math.floor(4.9) // 4</td>
+            </tr>
+            <tr>
+                <td>Math.ceil()</td>
+                <td>向上取整</td>
+                <td>Math.ceil(4.1) // 5</td>
+            </tr>
+            <tr>
+                <td>Math.max()</td>
+                <td>最大值</td>
+                <td>Math.max(1,2,3) // 3</td>
+            </tr>
+            <tr>
+                <td>Math.min()</td>
+                <td>最小值</td>
+                <td>Math.min(1,2,3) // 1</td>
+            </tr>
+        </table>
+
+        <h2>2. 字符串运算</h2>
+        <h3>字符串常用方法</h3>
+        <table>
+            <tr>
+                <th>方法</th>
+                <th>描述</th>
+                <th>示例</th>
+            </tr>
+            <tr>
+                <td>length</td>
+                <td>获取字符串长度</td>
+                <td>"Hello".length // 5</td>
+            </tr>
+            <tr>
+                <td>concat()</td>
+                <td>连接字符串</td>
+                <td>"Hello".concat(" World") // "Hello World"</td>
+            </tr>
+            <tr>
+                <td>indexOf()</td>
+                <td>查找子字符串位置</td>
+                <td>"Hello".indexOf("l") // 2</td>
+            </tr>
+            <tr>
+                <td>slice()</td>
+                <td>截取字符串</td>
+                <td>"Hello".slice(1,4) // "ell"</td>
+            </tr>
+            <tr>
+                <td>toLowerCase()</td>
+                <td>转小写</td>
+                <td>"Hello".toLowerCase() // "hello"</td>
+            </tr>
+            <tr>
+                <td>toUpperCase()</td>
+                <td>转大写</td>
+                <td>"Hello".toUpperCase() // "HELLO"</td>
+            </tr>
+            <tr>
+                <td>trim()</td>
+                <td>去除首尾空格</td>
+                <td>" Hello ".trim() // "Hello"</td>
+            </tr>
+            <tr>
+                <td>replace()</td>
+                <td>替换字符串</td>
+                <td>"Hello".replace("l", "L") // "HeLlo"</td>
+            </tr>
+        </table>
+
+        <div class="example">
+            <h3>实际示例：</h3>
+            <script>
+                // 数字运算示例
+                document.write("<p>数字运算：2 ** 3 + 5 = " + (2 ** 3 + 5) + "</p>");
+                document.write("<p>Math.round(4.6) = " + Math.round(4.6) + "</p>");
+
+                // 字符串运算示例
+                let str = "Hello World";
+                document.write("<p>字符串长度：" + str.length + "</p>");
+                document.write("<p>字符串大写：" + str.toUpperCase() + "</p>");
+
+                function sayHello(name) {
+                    let count = 1;
+                    return innerSayHello = (innerName)=> {
+                        console.log(`Count:${count++}`)
+                        console.log(`Hello, ${name}`);
+
+                    }
+                }
+            </script>
+        </div>
+    </div>
+</body>
+</html>

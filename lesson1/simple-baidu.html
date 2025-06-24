@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Search Page</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f8f8;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .logo {
+        position: relative;
+        margin: 0 auto;
+      }
+
+      .search-container {
+        width: 550px;
+        margin: auto;
+        display: flex;
+      }
+
+      .search-box {
+        flex: 1;
+        padding: 10px 20px;
+        font-size: 16px;
+        border: 1px solid #dfe1e6;
+        border-radius: 24px 0 0 24px;
+        outline: none;
+      }
+
+      .search-box:focus,
+      .search-box:hover {
+        border-color: #5b9dd9;
+        box-shadow: 0 0 8px rgba(81, 158, 217, 0.6);
+      }
+
+      .search-button {
+        width: 120px;
+        height: 42px;
+
+        padding: 10px 20px;
+        background-color: #4e6ef2;
+        border: none;
+        border-radius: 0 24px 24px 0;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        outline: none;
+        border: 2px solid green;
+      }
+
+      .search-button:hover {
+        background-color: #2e83e4;
+      }
+    </style>
+  </head>
+  <body>
+    <img
+      src="https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png"
+      alt="百度logo"
+      class="logo"
+    />
+
+    <div class="search-container">
+      <input
+        id="input"
+        type="text"
+        class="search-box"
+        placeholder="百度一下，你就知道"
+      />
+      <button
+        id="btn"
+        type="submit"
+        class="search-button"
+        onclick="onSearchClick()"
+      >
+        百度一下
+      </button>
+    </div>
+
+    <script>
+      function onSearchClick() {
+        const input = document.getElementById("input");
+        // const input = document.getElementsByClassName('search-box')[0];
+        // const input = document.getElementsByTagName('input')[0];
+        console.log(input);
+        const searchKeyword = input.value;
+        if (!searchKeyword) {
+          alert(`Ooops! You never told me what to search`);
+        } else {
+          alert(`You are searching with key word '${searchKeyword}'`);
+        }
+      }
+    </script>
+  </body>
+</html>

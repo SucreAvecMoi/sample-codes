@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS选择器示例</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* 元素选择器 */
+        h1 {
+            color: #2196F3;
+            text-align: center;
+        }
+
+        /* 类选择器 */
+        .selector-example {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        /* ID选择器 */
+        #first-example {
+            background-color: #f0f0f0;
+        }
+
+        /* 后代选择器 */
+        .selector-example p {
+            margin: 5px 0;
+        }
+
+        /* 子元素选择器 */
+        .selector-example > h3 {
+            color: #333;
+            margin-top: 0;
+        }
+
+        /* 相邻兄弟选择器 */
+        h3 + p {
+            font-weight: bold;
+        }
+
+        /* 属性选择器 */
+        input[type="text"] {
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+
+        /* 伪类选择器 */
+        a:hover {
+            color: red;
+            text-decoration: none;
+        }
+
+        /* 伪元素选择器 */
+        p::first-letter {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS选择器示例</h1>
+
+    <div id="first-example" class="selector-example">
+        <h3>1. 元素选择器</h3>
+        <p>使用HTML标签名称直接选择元素，如：h1, p, div等</p>
+    </div>
+
+    <div class="selector-example">
+        <h3>2. 类选择器</h3>
+        <p>使用.className选择具有特定类的元素</p>
+    </div>
+
+    <div class="selector-example">
+        <h3>3. ID选择器</h3>
+        <p>使用#idName选择具有特定ID的元素</p>
+    </div>
+
+    <div class="selector-example">
+        <h3>4. 后代选择器</h3>
+        <div>
+            <p>选择某个元素的后代元素，如：.selector-example p</p>
+        </div>
+    </div>
+
+    <div class="selector-example">
+        <h3>5. 子元素选择器</h3>
+        <p>选择某个元素的直接子元素，如：.selector-example > h3</p>
+    </div>
+
+    <div class="selector-example">
+        <h3>6. 属性选择器</h3>
+        <p>根据属性选择元素：</p>
+        <input type="text" placeholder="文本输入框示例">
+    </div>
+
+    <div class="selector-example">
+        <h3>7. 伪类选择器</h3>
+        <p>选择元素的特定状态：</p>
+        <a href="#">悬停在此处查看效果</a>
+    </div>
+
+    <div class="selector-example">
+        <h3>8. 伪元素选择器</h3>
+        <p>这段文字的第一个字母会被放大并加粗显示。</p>
+    </div>
+</body>
+</html>

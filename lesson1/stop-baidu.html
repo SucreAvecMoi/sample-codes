@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>搜索引擎导航</title>
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .search-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .search-link {
+            padding: 10px 20px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s;
+        }
+        .search-link:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <h1>常用搜索引擎</h1>
+    <div class="search-links">
+        <a href="https://www.google.com" class="search-link">Google</a>
+        <a href="https://www.bing.com" class="search-link">Bing</a>
+        <a href="https://www.baidu.com" class="search-link" onclick="showBaiduWarning(event)">Baidu</a>
+        <a href="https://www.sogou.com" class="search-link">搜狗搜索</a>
+        <a href="https://duckduckgo.com" class="search-link">DuckDuckGo</a>
+    </div>
+
+    <script>
+        function showBaiduWarning(event) {
+            event.preventDefault();
+            alert('提示：百度搜索广告太多，不建议使用！');
+            if(confirm('是否仍然继续访问？')) {
+                window.location.href = 'https://www.baidu.com';
+            }
+        }
+    </script>
+</body>
+</html>

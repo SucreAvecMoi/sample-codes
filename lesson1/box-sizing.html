@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS盒模型示例</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-around;
+            margin: 50px;
+        }
+        
+        .box {
+            width: 200px;
+            height: 200px;
+            padding: 20px;
+            border: 5px solid #333;
+            margin: 20px;
+            background-color: #f0f0f0;
+            position: relative;
+        }
+        
+        .content-box {
+            box-sizing: content-box;
+            /* 实际宽度 = width + padding + border = 250px */
+        }
+        
+        .border-box {
+            box-sizing: border-box;
+            /* 实际宽度 = width(包含padding和border) = 200px */
+        }
+
+        .description {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .dimension-label {
+            position: absolute;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .width-label {
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .padding-label {
+            top: 0;
+            right: -70px;
+            background: #ffeb3b;
+            padding: 2px 5px;
+        }
+
+        .border-label {
+            top: 40px;
+            right: -70px;
+            background: #ff9800;
+            padding: 2px 5px;
+        }
+
+        .content-area {
+            background: rgba(76, 175, 80, 0.2);
+            height: calc(100% - 40px);
+            width: calc(100% - 40px);
+        }
+
+        .padding-area {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 20px solid rgba(255, 235, 59, 0.2);
+            pointer-events: none;
+        }
+
+        .border-area {
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border: 5px solid rgba(255, 152, 0, 0.2);
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">CSS盒模型演示</h1>
+    
+    <div class="container">
+        <div>
+            <div class="box content-box">
+                <div class="content-area">
+                    <h3>Content Box</h3>
+                    <p>内容区域</p>
+                </div>
+                <div class="padding-area"></div>
+                <div class="border-area"></div>
+                <span class="dimension-label width-label">总宽度: 250px</span>
+                <span class="dimension-label padding-label">padding: 20px</span>
+                <span class="dimension-label border-label">border: 5px</span>
+            </div>
+            <div class="description">
+                <p>content-box（标准盒模型）:</p>
+                <p>实际宽度 = width + padding + border</p>
+                <p>设置width: 200px，最终宽度为250px</p>
+            </div>
+        </div>
+
+        <div>
+            <div class="box border-box">
+                <div class="content-area">
+                    <h3>Border Box</h3>
+                    <p>内容区域</p>
+                </div>
+                <div class="padding-area"></div>
+                <div class="border-area"></div>
+                <span class="dimension-label width-label">总宽度: 200px</span>
+                <span class="dimension-label padding-label">padding: 20px</span>
+                <span class="dimension-label border-label">border: 5px</span>
+            </div>
+            <div class="description">
+                <p>border-box（IE盒模型）:</p>
+                <p>实际宽度 = width（包含padding和border）</p>
+                <p>设置width: 200px，最终宽度为200px</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>在HTML中设置CSS样式的方法</title>
+    <style>
+      .demo-container {
+        margin: 20px;
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+
+      .text-blue {
+        color: blue;
+        font-size: 18px;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      .highlight {
+        background-color: yellow;
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="text-center">在HTML中设置CSS样式的方法</h1>
+
+    <div class="demo-container">
+      <h2>1. 使用style属性（内联样式）</h2>
+      <p>- 直接在HTML标签中使用style属性设置样式</p>
+      <p style="color: red; font-size: 20px; font-weight: bold">
+        这是使用style属性设置的样式
+      </p>
+      <p
+        style="
+          background-color: #e0e0e0;
+          padding: 10px;
+          border: 2px dashed blue;
+        "
+      >
+        这是另一个使用style属性的例子
+      </p>
+    </div>
+
+    <div class="demo-container">
+      <h2>2. 使用class属性</h2>
+      <p>- 通过class属性应用预定义的CSS类</p>
+      <p class="text-blue">这是使用class设置的蓝色文本</p>
+      <p class="text-blue highlight">这是同时使用多个class的例子</p>
+    </div>
+
+    <div class="demo-container">
+      <h2>3. style属性与class的对比</h2>
+      <ul>
+        <li>
+          style属性优点：
+          <ul>
+            <li>直观，容易修改</li>
+            <li>优先级高</li>
+          </ul>
+        </li>
+        <li>
+          class属性优点：
+          <ul>
+            <li>可重用性好</li>
+            <li>维护性强</li>
+            <li>代码更简洁</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="demo-container">
+      <h2>4. 最佳实践</h2>
+      <ul>
+        <li>优先使用class来定义样式</li>
+        <li>只在特殊情况下使用style属性</li>
+        <li>保持样式与内容的分离</li>
+      </ul>
+    </div>
+  </body>
+</html>

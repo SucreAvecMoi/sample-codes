@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript事件传递机制</title>
+    <style>
+        .container {
+            padding: 20px;
+            background-color: #f0f0f0;
+            border: 2px solid #333;
+            margin: 20px;
+        }
+        .parent {
+            padding: 20px;
+            background-color: #e0e0e0;
+            border: 2px solid #666;
+        }
+        .child {
+            padding: 20px;
+            background-color: #d0d0d0;
+            border: 2px solid #999;
+        }
+        .event-log {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            min-height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript事件传递机制演示</h1>
+    
+    <div class="container" id="container">
+        容器层
+        <div class="parent" id="parent">
+            父层
+            <div class="child" id="child">
+                子层
+            </div>
+        </div>
+    </div>
+
+    <div class="event-log" id="eventLog">
+        <strong>事件日志:</strong>
+    </div>
+
+    <script>
+        const container = document.getElementById('container');
+        const parent = document.getElementById('parent');
+        const child = document.getElementById('child');
+        const eventLog = document.getElementById('eventLog');
+
+        function logEvent(phase, element) {
+            const log = document.createElement('div');
+            log.textContent = `${phase}: ${element}`;
+            eventLog.appendChild(log);
+        }
+
+        // 冒泡阶段监听器
+        container.addEventListener('click', function(e) {
+            logEvent('冒泡阶段 - 容器', 'container');
+        }, false);
+
+        parent.addEventListener('click', function(e) {
+            logEvent('冒泡阶段 - 父层', 'parent');
+        }, false);
+
+        child.addEventListener('click', function(e) {
+            logEvent('冒泡阶段 - 子层', 'child');
+        }, false);
+        // 捕获阶段监听器
+        container.addEventListener('click', function(e) {
+            logEvent('捕获阶段 - 容器', 'container');
+        }, true);
+
+        parent.addEventListener('click', function(e) {
+            logEvent('捕获阶段 - 父层', 'parent');
+        }, true);
+
+        child.addEventListener('click', function(e) {
+            logEvent('捕获阶段 - 子层', 'child');
+        }, true);
+
+
+        // 清除日志按钮
+        const clearButton = document.createElement('button');
+        clearButton.textContent = '清除日志';
+        clearButton.onclick = function() {
+            eventLog.innerHTML = '<strong>事件日志:</strong>';
+        };
+        document.body.insertBefore(clearButton, eventLog);
+    </script>
+
+    <div style="margin: 20px;">
+        <h2>说明：</h2>
+        <p>1. <strong>事件捕获阶段</strong>：事件从文档根节点开始向下传播到目标元素</p>
+        <p>2. <strong>目标阶段</strong>：事件到达目标元素</p>
+        <p>3. <strong>事件冒泡阶段</strong>：事件从目标元素开始向上传播回文档根节点</p>
+        <p>点击最内层的"子层"区域，观察事件传递的顺序：</p>
+        <ul>
+            <li>先看到捕获阶段：容器 -> 父层 -> 子层</li>
+            <li>然后是冒泡阶段：子层 -> 父层 -> 容器</li>
+        </ul>
+    </div>
+</body>
+</html>

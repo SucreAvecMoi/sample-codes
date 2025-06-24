@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS尺寸属性演示</title>
+    <style>
+        .demo-container {
+            margin: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+        }
+
+        .size-box {
+            background-color: #e3f2fd;
+            margin: 10px;
+            border: 2px solid #1976d2;
+        }
+
+        /* width和height演示 */
+        .fixed-size {
+            width: 200px;
+            height: 100px;
+        }
+
+        /* 最大最小尺寸演示 */
+        .min-max-size {
+            min-width: 200px;
+            max-width: 400px;
+            min-height: 100px;
+            max-height: 200px;
+            background-color: #fff3e0;
+            border-color: #ff9800;
+        }
+
+        /* 百分比尺寸演示 */
+        .percentage-size {
+            width: 50%;
+            height: 100px;
+            background-color: #e8f5e9;
+            border-color: #4caf50;
+        }
+
+        /* 视口相关尺寸演示 */
+        .viewport-size {
+            width: 50vw;
+            height: 20vh;
+            background-color: #fce4ec;
+            border-color: #e91e63;
+        }
+
+        /* 溢出处理演示 */
+        .overflow-demo {
+            width: 200px;
+            height: 100px;
+            margin: 10px;
+            padding: 10px;
+            border: 2px solid #9c27b0;
+            background-color: #f3e5f5;
+        }
+
+        .overflow-visible { overflow: visible; }
+        .overflow-hidden { overflow: hidden; }
+        .overflow-scroll { overflow: scroll; }
+        .overflow-auto { overflow: auto; }
+    </style>
+</head>
+<body>
+    <h1>CSS尺寸属性演示</h1>
+
+    <div class="demo-container">
+        <h2>1. 固定尺寸（width/height）</h2>
+        <div class="size-box fixed-size">
+            width:200px<br>
+            height:100px
+        </div>
+    </div>
+
+    <div class="demo-container">
+        <h2>2. 最大最小尺寸（min-width/max-width/min-height/max-height）</h2>
+        <div class="size-box min-max-size">
+            min-width:200px<br>
+            max-width:400px<br>
+            min-height:100px<br>
+            max-height:200px
+        </div>
+    </div>
+
+    <div class="demo-container">
+        <h2>3. 百分比尺寸</h2>
+        <div class="size-box percentage-size">
+            width:50%<br>
+            height:100px
+        </div>
+    </div>
+
+    <div class="demo-container">
+        <h2>4. 视口相关尺寸（vw/vh）</h2>
+        <div class="size-box viewport-size">
+            width:50vw<br>
+            height:20vh
+        </div>
+    </div>
+
+    <div class="demo-container">
+        <h2>5. 溢出处理（overflow）</h2>
+        
+        <h3>visible（默认值）:</h3>
+        <div class="overflow-demo overflow-visible">
+            这是一段很长的文本，用来演示内容溢出时的表现。这是一段很长的文本，用来演示内容溢出时的表现。这是一段很长的文本，用来演示内容溢出时的表现。
+        </div>
+
+        <h3>hidden:</h3>
+        <div class="overflow-demo overflow-hidden">
+            这是一段很长的文本，用来演示内容溢出时的表现。这是一段很长的文本，用来演示内容溢出时的表现。这是一段很长的文本，用来演示内容溢出时的表现。
+        </div>
+
+        <h3>scroll:</h3>
+        <div class="overflow-demo overflow-scroll">
+            这是一段很长的文本，用来演示内容溢出时的表现。这是一段很长的文本，用来演示内容溢出时的表现。这是一段很长的文本，用来演示内容溢出时的表现。
+        </div>
+
+        <h3>auto:</h3>
+        <div class="overflow-demo overflow-auto">
+            这是一段很长的文本，用来演示内容溢出时的表现。这是一段很长的文本，用来演示内容溢出时的表现。这是一段很长的文本，用来演示内容溢出时的表现。
+        </div>
+    </div>
+</body>
+</html>

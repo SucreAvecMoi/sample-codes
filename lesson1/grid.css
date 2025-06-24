@@ -1,0 +1,190 @@
+span {
+    font-size: 2em;
+  }
+  
+  #container{
+    display: grid;
+    grid-template-columns: 50px 50px 50px;
+    grid-template-rows: 50px 50px 50px;
+  }
+
+  #container2{
+    display: grid;
+    grid-template-columns: 50px 100px 1fr;
+    grid-template-rows: 1fr 200px 50px;
+  }
+
+  #container-template-areas {
+    height: 800px;
+    display: grid;
+    grid-template-rows: 50px 1fr 50px;
+    grid-template-columns: 200px 1fr;
+    grid-template-areas: 'header header header'
+                        'nav content content'
+                        'footer footer footer';
+  }
+  
+  .item {
+    font-size: 2em;
+    text-align: center;
+    border: 1px solid #e5e4e9;
+  }
+  
+  .item-1 {
+    background-color: #ef342a;
+  }
+  
+  .item-2 {
+    background-color: #f68f26;
+  }
+  
+  .item-3 {
+    background-color: #4ba946;
+  }
+  
+  .item-4 {
+    background-color: #0376c2;
+  }
+  
+  .item-5 {
+    background-color: #c077af;
+  }
+  
+  .item-6 {
+    background-color: #f8d29d;
+  }
+  
+  .item-7 {
+    background-color: #b5a87f;
+  }
+  
+  .item-8 {
+    background-color: #d0e4a9;
+  }
+  
+  .item-9 {
+    background-color: #4dc7ec;
+  }
+
+  .header {
+    grid-area:header;
+    background-color: lightblue;
+  }
+
+  .left {
+    background: lightyellow;
+    grid-area: nav;
+  }
+
+  .content {
+    background: #4ba946;
+    grid-area: content;
+  }
+
+  .footer {
+    background: lightblue;
+    grid-area: footer;
+  }
+
+  /* 通用样式 */
+  .grid-container {
+    border: 2px solid #333;
+    margin: 20px;
+    padding: 10px;
+  }
+
+  /* 修改每个容器的背景色 */
+  .justify-items-demo {
+    display: grid;
+    grid-template-columns: repeat(2, 200px);
+    grid-template-rows: repeat(2, 100px);
+    gap: 10px;
+    background-color: #f0f0f0;
+  }
+
+  .align-items-demo {
+    display: grid;
+    grid-template-columns: repeat(2, 200px);
+    grid-template-rows: repeat(2, 100px);
+    gap: 10px;
+    background-color: #e8f5e9;
+  }
+
+  .justify-content-demo {
+    display: grid;
+    width: 600px;
+    grid-template-columns: repeat(4, 100px);
+    gap: 10px;
+    justify-content: space-between;
+    background-color: #e3f2fd;
+  }
+
+  .align-content-demo {
+    display: grid;
+    height: 400px;
+    grid-template-rows: repeat(2, 100px);
+    grid-template-columns: repeat(2, 100px);
+    gap: 10px;
+    align-content: space-between;
+    background-color: #fce4ec;
+  }
+
+  /* 给每个示例的item添加不同的背景色 */
+  .justify-items-demo .item:nth-child(1) {
+    justify-self: start;
+    background-color: #f44336;
+  }
+
+  .justify-items-demo .item:nth-child(2) {
+    justify-self: end;
+    background-color: #e91e63;
+  }
+
+  .justify-items-demo .item:nth-child(3) {
+    justify-self: center;
+    background-color: #9c27b0;
+  }
+
+  .justify-items-demo .item:nth-child(4) {
+    justify-self: stretch;
+    background-color: #673ab7;
+  }
+
+  .align-items-demo .item:nth-child(1) {
+    align-self: start;
+    background-color: #4caf50;
+  }
+
+  .align-items-demo .item:nth-child(2) {
+    align-self: end;
+    background-color: #8bc34a;
+  }
+
+  .align-items-demo .item:nth-child(3) {
+    align-self: center;
+    background-color: #cddc39;
+  }
+
+  .align-items-demo .item:nth-child(4) {
+    align-self: stretch;
+    background-color: #ffeb3b;
+  }
+
+  .justify-content-demo .item {
+    background-color: #2196f3;
+  }
+
+  .align-content-demo .item {
+    background-color: #ff4081;
+  }
+
+  /* 通用item样式 */
+  .item {
+    color: white;
+    padding: 20px;
+    margin: 5px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }

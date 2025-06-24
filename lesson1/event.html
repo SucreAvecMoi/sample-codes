@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Handling Examples</title>
+    <style>
+      button {
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Event Handling Examples</h2>
+
+    <!-- HTML中的事件属性方式 -->
+    <button onclick="handleClickDirect('Direct Event')">
+      Click Me Directly
+    </button>
+
+    <!-- JavaScript中的事件监听器方式 -->
+    <button id="clickMeListener">Click Me with Listener</button>
+
+    <script>
+      // HTML事件属性方式: 直接在HTML标签中定义事件处理器
+      function handleClickDirect(source) {
+        alert(source + ": Button was clicked using direct event attribute!");
+      }
+
+      // JavaScript事件监听器方式: 使用addEventListener添加事件处理器
+      document.addEventListener("DOMContentLoaded", function () {
+        var buttonListener = document.getElementById("clickMeListener");
+        buttonListener.addEventListener("click", function () {
+          alert("Listener: Button was clicked using addEventListener!");
+        });
+      });
+    </script>
+  </body>
+</html>

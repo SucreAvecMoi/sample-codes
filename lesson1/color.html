@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS颜色属性与设值方式</title>
+    <style>
+      .demo-container {
+        margin: 20px;
+        padding: 15px;
+        border: 1px solid #ccc;
+      }
+
+      .color-box {
+        width: 300px;
+        height: 100px;
+        margin: 10px;
+        padding: 10px;
+      }
+
+      /* 关键字颜色示例 */
+      .keyword-color {
+        color: red;
+        background-color: lightblue;
+        border: 2px solid green;
+      }
+
+      /* 十六进制颜色示例 */
+      .hex-color {
+        color: #ff0000;
+        background-color: #87ceeb;
+        border: 2px solid #008000;
+      }
+
+      /* RGB颜色示例 */
+      .rgb-color {
+        color: rgb(255, 0, 0);
+        background-color: rgb(135, 206, 235);
+        border: 2px solid rgb(0, 128, 0);
+      }
+
+      /* RGBA颜色示例 */
+      .rgba-color {
+        color: rgba(255, 0, 0, 1);
+        background-color: rgba(135, 206, 235, 0.5);
+        border: 2px solid rgba(0, 128, 0, 0.8);
+      }
+
+      /* HSL颜色示例 */
+      .hsl-color {
+        color: hsl(0, 100%, 50%);
+        background-color: hsl(197, 71%, 73%);
+        border: 2px solid hsl(120, 100%, 25%);
+      }
+
+      .gradient-linear {
+        background: linear-gradient(90deg, #ff7e5f, #feb47b);
+        color: white;
+        width: 300px;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+
+      .gradient-radial {
+        background: radial-gradient(circle, #43cea2, #185a9d);
+        color: white;
+        width: 300px;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSS颜色属性与设值方式</h1>
+
+    <div class="demo-container">
+      <h2>常见的需要设置颜色的CSS属性：</h2>
+      <ul>
+        <li>color - 文字颜色</li>
+        <li>background-color - 背景颜色</li>
+        <li>border-color - 边框颜色</li>
+        <li>outline-color - 轮廓颜色</li>
+        <li>box-shadow - 阴影颜色</li>
+        <li>text-shadow - 文字阴影颜色</li>
+      </ul>
+    </div>
+
+    <div class="demo-container">
+      <h2>颜色设值方式：</h2>
+
+      <h3>1. 颜色关键字</h3>
+      <div class="color-box keyword-color">
+        示例：<br />
+        color: red;<br />
+        background-color: lightblue;<br />
+        border: 2px solid green;
+      </div>
+
+      <h3>2. 十六进制表示法</h3>
+      <div class="color-box hex-color">
+        示例：<br />
+        color: #FF0000;<br />
+        background-color: #87CEEB;<br />
+        border: 2px solid #008000;
+      </div>
+
+      <h3>3. RGB表示法</h3>
+      <div class="color-box rgb-color">
+        示例：<br />
+        color: rgb(255, 0, 0);<br />
+        background-color: rgb(135, 206, 235);<br />
+        border: 2px solid rgb(0, 128, 0);
+      </div>
+
+      <h3>4. RGBA表示法（带透明度）</h3>
+      <div class="color-box rgba-color">
+        示例：<br />
+        color: rgba(255, 0, 0, 1);<br />
+        background-color: rgba(135, 206, 235, 0.5);<br />
+        border: 2px solid rgba(0, 128, 0, 0.8);
+      </div>
+
+      <h3>5. HSL表示法（色相、饱和度、亮度）</h3>
+      <div class="color-box hsl-color">
+        示例：<br />
+        color: hsl(0, 100%, 50%);<br />
+        background-color: hsl(197, 71%, 73%);<br />
+        border: 2px solid hsl(120, 100%, 25%);
+      </div>
+
+      <h3>6. 渐变色</h3>
+      <div class="color-box gradient-linear">
+        示例：<br />
+        background: linear-gradient(90deg, #ff7e5f, #feb47b);
+      </div>
+
+      <div class="color-box gradient-radial">
+        示例：<br />
+        background: radial-gradient(circle, #43cea2, #185a9d);
+      </div>
+    </div>
+  </body>
+</html>

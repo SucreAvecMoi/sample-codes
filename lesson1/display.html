@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Display属性演示</title>
+    <style>
+        .demo-container {
+            margin: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+        }
+
+        /* block元素演示 */
+        .block-demo {
+            display: block;
+            background-color: #e3f2fd;
+            border: 2px solid #2196f3;
+            margin: 10px 0;
+            padding: 10px;
+        }
+
+        /* inline元素演示 */
+        .inline-demo {
+            display: inline;
+            background-color: #f3e5f5;
+            border: 2px solid #9c27b0;
+            padding: 5px;
+            margin: 0 5px;
+        }
+
+        /* inline-block元素演示 */
+        .inline-block-demo {
+            display: inline-block;
+            width: 150px;
+            height: 80px;
+            background-color: #e8f5e9;
+            border: 2px solid #4caf50;
+            margin: 5px;
+            padding: 10px;
+        }
+
+        /* flex容器演示 */
+        .flex-container {
+            display: flex;
+            background-color: #fff3e0;
+            border: 2px solid #ff9800;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        .flex-item {
+            background-color: #ffccbc;
+            border: 1px solid #ff5722;
+            padding: 10px;
+            margin: 5px;
+        }
+
+        /* grid容器演示 */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            background-color: #fce4ec;
+            border: 2px solid #e91e63;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        .grid-item {
+            background-color: #f8bbd0;
+            border: 1px solid #d81b60;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* none演示 */
+        .none-demo {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Display属性演示</h1>
+
+    <div class="demo-container">
+        <h2>1. Block（块级元素）</h2>
+        <p>- 独占一行</p>
+        <p>- 可以设置宽高</p>
+        <div class="block-demo">这是一个block元素</div>
+        <div class="block-demo">这是另一个block元素</div>
+    </div>
+
+    <div class="demo-container">
+        <h2>2. Inline（行内元素）</h2>
+        <p>- 在一行内显示</p>
+        <p>- 不能设置宽高</p>
+        <span class="inline-demo">这是一个inline元素</span>
+        <span class="inline-demo">这是另一个inline元素</span>
+    </div>
+
+    <div class="demo-container">
+        <h2>3. Inline-block（行内块元素）</h2>
+        <p>- 在一行内显示</p>
+        <p>- 可以设置宽高</p>
+        <div class="inline-block-demo">Inline-block元素1</div>
+        <div class="inline-block-demo">Inline-block元素2</div>
+    </div>
+
+    <div class="demo-container">
+        <h2>4. Flex（弹性布局）</h2>
+        <p>- 用于创建灵活的布局</p>
+        <div class="flex-container">
+            <div class="flex-item">Flex项目1</div>
+            <div class="flex-item">Flex项目2</div>
+            <div class="flex-item">Flex项目3</div>
+        </div>
+    </div>
+
+    <div class="demo-container">
+        <h2>5. Grid（网格布局）</h2>
+        <p>- 用于创建二维网格布局</p>
+        <div class="grid-container">
+            <div class="grid-item">Grid项目1</div>
+            <div class="grid-item">Grid项目2</div>
+            <div class="grid-item">Grid项目3</div>
+            <div class="grid-item">Grid项目4</div>
+            <div class="grid-item">Grid项目5</div>
+            <div class="grid-item">Grid项目6</div>
+        </div>
+    </div>
+
+    <div class="demo-container">
+        <h2>6. None（隐藏元素）</h2>
+        <p>- 元素完全不显示，且不占据空间</p>
+        <div class="none-demo">这个元素被隐藏了</div>
+        <p>上面有一个被隐藏的元素</p>
+    </div>
+</body>
+</html>

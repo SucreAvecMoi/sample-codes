@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BOM Manipulation Example</title>
+  </head>
+  <body>
+    <button onclick="showWindow()">window case</button>
+    <button onclick="useNagivator()">navigator case</button>
+    <button onclick="useScreen()">screen case</button>
+    <button onclick="useLocation()">location case</button>
+    <script>
+      var childWin;
+      function showWindow() {
+        childWin = window.open("https://www.baidu.com", '_blank', true );
+      }
+
+      function useNagivator() {
+        navigator.getBattery().then(result=> {
+            console.log(result);
+            if(result.charging) {
+                alert('太棒了，你的电脑在充电')
+            } else {
+                alert('你的电脑没有在充电，请注意电量哦！')
+            }
+        }).catch(error=> {
+            console.error(error)
+        })
+      }
+
+      function useScreen() {
+        alert(`屏幕宽度：${screen.width}，屏幕高度：${screen.height}`);
+      }
+
+      function useLocation() {
+        alert(`当前网站：${location.pathname}`);
+      }
+
+    </script>
+  </body>
+</html>

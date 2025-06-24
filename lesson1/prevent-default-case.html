@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prevent Default Example</title>
+  </head>
+  <body>
+    <a href="https://www.baidu.com" id="myLink1" onclick="handleLink(event)"
+      >Visit baidu.com</a
+    >
+    <a href="https://www.google.com" id="myLink3" onclick="handleLink(event)"
+      >Visit google.com</a
+    >
+
+    <script>
+      //   document.getElementById('myLink1').addEventListener('click', function(event) {
+      //     event.preventDefault(); // 阻止链接的默认行为
+      //     alert('Link clicked, but default action prevented!');
+      //   });
+      function handleLink(event) {
+        event.preventDefault();
+        let link = event.target.host;
+        if (link !== "www.baidu.com") {
+          alert("跳转的地址不安全，请慎重点击");
+        } else {
+            window.location.href = event.target.href;
+        }
+      }
+    </script>
+  </body>
+</html>

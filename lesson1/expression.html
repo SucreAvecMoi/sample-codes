@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript表达式</title>
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .code-example {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .output {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript表达式</h1>
+
+    <h2>1. 算术表达式</h2>
+    <div class="code-example">
+        <pre><code>
+let a = 5 + 3;     // 加法
+let b = 10 - 4;    // 减法
+let c = 3 * 4;     // 乘法
+let d = 15 / 3;    // 除法
+let e = 10 % 3;    // 取余
+        </code></pre>
+    </div>
+    <div class="output">
+        演示效果：
+        <script>
+            document.write("5 + 3 = " + (5 + 3) + "<br>");
+            document.write("10 - 4 = " + (10 - 4) + "<br>");
+            document.write("3 * 4 = " + (3 * 4) + "<br>");
+            document.write("15 / 3 = " + (15 / 3) + "<br>");
+            document.write("10 % 3 = " + (10 % 3));
+        </script>
+    </div>
+
+    <h2>2. 比较表达式</h2>
+    <div class="code-example">
+        <pre><code>
+let x = 5;
+let y = "5";
+console.log(x == y);   // 相等（值）
+console.log(x === y);  // 严格相等（值和类型）
+console.log(x != y);   // 不相等
+console.log(x !== y);  // 严格不相等
+        </code></pre>
+    </div>
+    <div class="output">
+        演示效果：
+        <script>
+            let x = 5;
+            let y = "5";
+            document.write("5 == '5': " + (x == y) + "<br>");
+            document.write("5 === '5': " + (x === y) + "<br>");
+            document.write("5 != '5': " + (x != y) + "<br>");
+            document.write("5 !== '5': " + (x !== y));
+        </script>
+    </div>
+
+    <h2>3. 逻辑表达式</h2>
+    <div class="code-example">
+        <pre><code>
+let p = true;
+let q = false;
+console.log(p && q);  // 与
+console.log(p || q);  // 或
+console.log(!p);      // 非
+        </code></pre>
+    </div>
+    <div class="output">
+        演示效果：
+        <script>
+            let p = true;
+            let q = false;
+            document.write("true && false = " + (p && q) + "<br>");
+            document.write("true || false = " + (p || q) + "<br>");
+            document.write("!true = " + (!p));
+        </script>
+    </div>
+
+    <h2>4. 字符串表达式</h2>
+    <div class="code-example">
+        <pre><code>
+let firstName = "张";
+let lastName = "三";
+let fullName = firstName + lastName;  // 字符串连接
+        </code></pre>
+    </div>
+    <div class="output">
+        演示效果：
+        <script>
+            let firstName = "张";
+            let lastName = "三";
+            document.write("firstName + lastName = " + (firstName + lastName));
+        </script>
+    </div>
+
+    <h2>5. 条件（三元）表达式</h2>
+    <div class="code-example">
+        <pre><code>
+let age = 20;
+let status = age >= 18 ? "成年" : "未成年";
+        </code></pre>
+    </div>
+    <div class="output">
+        演示效果：
+        <script>
+            let age = 20;
+            document.write("age = 20 时的状态: " + (age >= 18 ? "成年" : "未成年"));
+        </script>
+    </div>
+
+    <h3>注意事项：</h3>
+    <ul>
+        <li>表达式是由操作数和运算符组成的</li>
+        <li>表达式总是会产生一个值</li>
+        <li>运算符优先级需要特别注意</li>
+        <li>使用括号可以明确运算优先级</li>
+        <li>在进行比较时，建议使用严格相等(===)和严格不相等(!==)</li>
+    </ul>
+</body>
+</html>

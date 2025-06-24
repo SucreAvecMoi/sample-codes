@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Position定位属性</title>
+    <style>
+        .demo-container {
+            margin: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+        }
+
+        .position-box {
+            width: 100px;
+            height: 100px;
+            background-color: #f0f0f0;
+            border: 2px solid #333;
+            margin: 10px;
+        }
+
+        /* static定位示例 */
+        .static-box {
+            position: static;
+            background-color: #ffcdd2;
+        }
+
+        /* relative定位示例 */
+        .relative-box {
+            position: relative;
+            top: 20px;
+            left: 20px;
+            background-color: #c8e6c9;
+        }
+
+        /* absolute定位示例 */
+        .absolute-container {
+            position: relative;
+            height: 200px;
+            border: 1px dashed #999;
+        }
+        .absolute-box {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            background-color: #bbdefb;
+        }
+
+        /* fixed定位示例 */
+        .fixed-box {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #ffe0b2;
+        }
+
+        /* sticky定位示例 */
+        .sticky-container {
+            height: 200px;
+            overflow: auto;
+            border: 1px dashed #999;
+        }
+        .sticky-box {
+            position: sticky;
+            top: 0;
+            background-color: #e1bee7;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Position定位属性</h1>
+
+    <div class="demo-container">
+        <h2>1. Static定位（默认值）</h2>
+        <p>- 元素按照正常文档流进行定位</p>
+        <p>- 不受top、right、bottom、left属性影响</p>
+        <div class="position-box static-box">Static定位</div>
+    </div>
+
+    <div class="demo-container">
+        <h2>2. Relative定位</h2>
+        <p>- 相对于元素原来的位置进行定位</p>
+        <p>- 不脱离文档流</p>
+        <div class="position-box relative-box">Relative定位</div>
+    </div>
+
+    <div class="demo-container">
+        <h2>3. Absolute定位</h2>
+        <p>- 相对于最近的非static定位祖先元素进行定位</p>
+        <p>- 脱离文档流</p>
+        <div class="absolute-container">
+            <div class="position-box absolute-box">Absolute定位</div>
+        </div>
+    </div>
+
+    <div class="demo-container">
+        <h2>4. Fixed定位</h2>
+        <p>- 相对于浏览器视口进行定位</p>
+        <p>- 脱离文档流</p>
+        <div class="position-box fixed-box">Fixed定位</div>
+    </div>
+
+    <div class="demo-container">
+        <h2>5. Sticky定位</h2>
+        <p>- 基于用户的滚动位置进行定位</p>
+        <p>- 在特定阈值前为relative，之后为fixed</p>
+        <div class="sticky-container">
+            <div class="position-box sticky-box">Sticky定位</div>
+            <p>滚动内容...</p>
+            <p>滚动内容...</p>
+            <p>滚动内容...</p>
+            <p>滚动内容...</p>
+            <p>滚动内容...</p>
+            <p>滚动内容...</p>
+            <p>滚动内容...</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Manipulation Example</title>
+  </head>
+  <body>
+    <div id="content">
+      <p>Original paragraph.</p>
+    </div>
+
+    <button onclick="addParagraph()">Add Paragraph</button>
+
+    <script>
+      function addParagraph() {
+        // 创建一个新的 p 元素
+        var newParagraph = document.createElement("p");
+
+        // 设置 p 元素的内容
+        newParagraph.textContent =
+          "This is a new paragraph added by JavaScript.";
+
+        // 设置 p 元素的样式
+        newParagraph.style.color = "blue";
+        newParagraph.style.fontWeight = "bold";
+
+        // 获取 content 元素
+        var contentDiv = document.getElementById("content");
+
+        // 将新的 p 元素添加到 content 元素中
+        contentDiv.appendChild(newParagraph);
+      }
+    </script>
+  </body>
+</html>
